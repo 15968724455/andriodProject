@@ -25,6 +25,7 @@ public class MemoRecordActivity extends AppCompatActivity implements View.OnClic
         // 设置监听
         save_memo.setOnClickListener(this);
         delete_memo.setOnClickListener(this);
+        initData();
     }
 
     protected void initData() {
