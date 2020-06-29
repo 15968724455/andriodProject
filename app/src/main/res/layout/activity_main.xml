@@ -13,12 +13,14 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:gravity="center">
-        <Button android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <Button android:layout_width="100dp"
+                android:layout_height="@dimen/Button_height"
+                android:textSize="@dimen/Button_textSize"
                 android:text="@string/tool01"
                 android:id="@+id/btn_tool_01"/>
-        <Button android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <Button android:layout_width="100dp"
+                android:layout_height="@dimen/Button_height"
+                android:textSize="@dimen/Button_textSize"
                 android:text="@string/tool02"
                 android:id="@+id/btn_tool_02"/>
     </TableRow>
@@ -26,12 +28,14 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:gravity="center">
-        <Button android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <Button android:layout_width="100dp"
+                android:layout_height="@dimen/Button_height"
+                android:textSize="@dimen/Button_textSize"
                 android:text="@string/tool03"
                 android:id="@+id/btn_tool_03"/>
-        <Button android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <Button android:layout_width="100dp"
+                android:layout_height="@dimen/Button_height"
+                android:textSize="@dimen/Button_textSize"
                 android:text="@string/tool04"
                 android:id="@+id/btn_tool_04"/>
     </TableRow>
