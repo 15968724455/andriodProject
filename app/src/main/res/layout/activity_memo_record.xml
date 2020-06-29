@@ -28,17 +28,17 @@
             android:layout_below="@id/tv_time"/>
     <ImageView
             android:id="@+id/save_memo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/Image_width"
+            android:layout_height="@dimen/Image_width"
             android:src="@drawable/save"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="20dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="70dp"/>
+            android:layout_marginRight="30dp"/>
     <ImageView
             android:id="@+id/delete_memo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/Image_width"
+            android:layout_height="@dimen/Image_width"
             android:src="@drawable/delete"
             android:layout_alignBottom="@id/save_memo"
             android:layout_toStartOf="@+id/save_memo"

@@ -19,13 +19,13 @@
             android:layout_margin="10dp"/>
     <ImageView
             android:id="@+id/add_memo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/Image_width"
+            android:layout_height="@dimen/Image_width"
             android:src="@drawable/add"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="20dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="70dp"
+            android:layout_marginRight="30dp"
     />
 
 </RelativeLayout>
