@@ -1,7 +1,9 @@
 package com.example.toolbox;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -19,13 +21,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_tool_02 = (Button) findViewById(R.id.btn_tool_02);
         btn_tool_03 = (Button) findViewById(R.id.btn_tool_03);
         btn_tool_04 = (Button) findViewById(R.id.btn_tool_04);
+
+        //设置监听器
+        btn_tool_01.setOnClickListener(this);
     }
 
     // 实现这个活动中的按钮的点击事件
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            // 按钮1（备忘录的点击事件）
             case R.id.btn_tool_01:
+                Intent intent = new Intent(MainActivity.this, MemoActivity.class);
+                startActivityForResult(intent, 1);
                 break;
             case R.id.btn_tool_02:
                 break;
