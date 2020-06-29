@@ -19,11 +19,11 @@
     <EditText
             android:id="@+id/memo_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:gravity="top"
             android:hint="请输入要添加的内容"
             android:paddingLeft="5dp"
+            android:layout_margin="5dp"
             android:background="#fefefe"/>
     <ImageView
             android:id="@+id/save_memo"
