@@ -1,10 +1,13 @@
 package com.example.toolbox;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -58,6 +61,36 @@ public class MemoActivity extends AppCompatActivity {
                 intent.putExtra("content", memoBean.getMemoContent());
                 // 跳转
                 MemoActivity.this.startActivityForResult(intent, 1);
+            }
+        });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+                AlertDialog dialog;
+                // 初始化对话框
+                AlertDialog.Builder builder = new AlertDialog.Builder(MemoActivity.this)
+                        .setMessage("是否删除此记录？")
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                MemoBean memoBean = list.get(position);
+                                if (mSQLiteHelper.deleteData(memoBean.getId())) {
+                                    list.remove(position); // 删除界面上对应的Item
+                                    memoAdapter.notifyDataSetChanged();// 更新界面
+                                    Toast.makeText(MemoActivity.this, "删除成功", 200).show();
+                                }
+                            }
+                        })
+                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss(); //关闭对话框
+                            }
+                        });
+                // 创建对话框
+                dialog = builder.create();
+                dialog.show();
+                return true;
             }
         });
     }
