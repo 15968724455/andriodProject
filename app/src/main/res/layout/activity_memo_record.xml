@@ -5,15 +5,15 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MemoRecordActivity">
+        tools:context=".MemoRecordActivity"
+        android:background="#fefefe">
     <TextView
             android:id="@+id/tv_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15sp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:gravity="center"
+            android:padding="10dp"
+            android:gravity="left"
             android:visibility="gone"
             android:textColor="#009f9d"/>
     <EditText
@@ -24,7 +24,8 @@
             android:hint="请输入要添加的内容"
             android:paddingLeft="5dp"
             android:layout_margin="5dp"
-            android:background="#fefefe"/>
+            android:background="#fefefe"
+            android:layout_below="@id/tv_time"/>
     <ImageView
             android:id="@+id/save_memo"
             android:layout_width="100dp"
