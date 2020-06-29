@@ -2,6 +2,7 @@ package com.example.toolbox;
 
 import android.content.Intent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import androidx.annotation.Nullable;
@@ -43,6 +44,22 @@ public class MemoActivity extends AppCompatActivity {
         //初始化对象并创建数据库
         mSQLiteHelper = new SQLiteHelper(this);
         showQueryData();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // 使用get()获取对应的Item数据
+                MemoBean memoBean = list.get(position);
+                Intent intent = new Intent(MemoActivity.this, MemoRecordActivity.class);
+                // 获取此条备忘的id
+                intent.putExtra("id", memoBean.getId());
+                // 获取此条备忘的时间
+                intent.putExtra("time", memoBean.getMemoTime());
+                // 获取此条备忘的正文
+                intent.putExtra("content", memoBean.getMemoContent());
+                // 跳转
+                MemoActivity.this.startActivityForResult(intent, 1);
+            }
+        });
     }
 
     // 从数据库中查找数据

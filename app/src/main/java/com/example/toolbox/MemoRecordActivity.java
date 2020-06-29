@@ -1,5 +1,6 @@
 package com.example.toolbox;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +32,18 @@ public class MemoRecordActivity extends AppCompatActivity implements View.OnClic
     protected void initData() {
         mSqLiteHelper = new SQLiteHelper(this);
         setTitle("添加记录");
+        Intent intent = getIntent();
+        if (intent != null) {
+            id = intent.getStringExtra("id");
+            if (id != null) {
+                setTitle("修改记录");
+                // 设置显示的正文和时间
+                content.setText(intent.getStringExtra("content"));
+                memo_time.setText(intent.getStringExtra("time"));
+                // 修改是否可见
+                memo_time.setVisibility(View.VISIBLE);
+            }
+        }
     }
 
     @Override
