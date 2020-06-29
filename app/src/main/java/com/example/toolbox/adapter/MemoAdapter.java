@@ -55,7 +55,10 @@ public class MemoAdapter extends BaseAdapter {
             // 直接使用getTag方法进行获取
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        return null;
+        MemoBean memoInfo = (MemoBean)getItem(position);
+        viewHolder.tvMemoContent.setText(memoInfo.getMemoContent());
+        viewHolder.tvMemoTime.setText(memoInfo.getMemoTime());
+        return convertView;
     }
 
     class ViewHolder {
