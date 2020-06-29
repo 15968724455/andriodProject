@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MemoRecordActivity">
+    <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:textColor="#009f9d"/>
+    <EditText
+            android:id="@+id/memo_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:hint="请输入要添加的内容"
+            android:paddingLeft="5dp"
+            android:background="#fefefe"/>
+    <ImageView
+            android:id="@+id/save_memo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/add"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="70dp"/>
+    <ImageView
+            android:id="@+id/delete_memo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/delete"
+            android:layout_alignBottom="@id/save_memo"
+            android:layout_toStartOf="@+id/save_memo"
+            android:layout_marginEnd="10dp"/>
+
+</RelativeLayout>
