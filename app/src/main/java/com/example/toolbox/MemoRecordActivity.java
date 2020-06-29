@@ -21,7 +21,7 @@ public class MemoRecordActivity extends AppCompatActivity implements View.OnClic
         save_memo = (ImageView) findViewById(R.id.save_memo);
         delete_memo = (ImageView) findViewById(R.id.delete_memo);
         content = (EditText) findViewById(R.id.memo_content);
-        memo_time = (Button) findViewById(R.id.tv_time);
+        memo_time = (TextView) findViewById(R.id.tv_time);
         // 设置监听
         save_memo.setOnClickListener(this);
         delete_memo.setOnClickListener(this);
