@@ -29,7 +29,7 @@
             android:id="@+id/save_memo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/add"
+            android:src="@drawable/save"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="20dp"
             android:layout_alignParentRight="true"
