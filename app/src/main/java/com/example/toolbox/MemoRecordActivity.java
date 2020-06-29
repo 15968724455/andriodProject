@@ -59,19 +59,33 @@ public class MemoRecordActivity extends AppCompatActivity implements View.OnClic
                 // 获取输入的内容
                 String memoContent = content.getText().toString().trim();
                 // 像数据库中添加数据
-                if (memoContent.length() > 0) {
-                    if (mSqLiteHelper.insertData(memoContent, DBUtils.getTime())) {
-                        showToast("保存成功");
-                        // 设置回调参数值
-                        setResult(2);
-                        finish();
-                    } else {
-                        showToast("保存失败");
+                if (id != null) {
+                    if (memoContent.length() > 0) {
+                        if (mSqLiteHelper.updateData(id, memoContent, DBUtils.getTime())) {
+                            showToast("修改成功");
+                            setResult(2);
+                            finish();
+                        }else {
+                            showToast("修改失败");
+                        }
+                    }else {
+                        showToast("修改后的内容不能为空");
                     }
                 } else {
-                    showToast("修改内容不能为空");
+                    if (memoContent.length() > 0) {
+                        if (mSqLiteHelper.insertData(memoContent, DBUtils.getTime())) {
+                            showToast("保存成功");
+                            // 设置回调参数值
+                            setResult(2);
+                            finish();
+                        } else {
+                            showToast("保存失败");
+                        }
+                    } else {
+                        showToast("修改内容不能为空");
+                    }
+                    break;
                 }
-                break;
         }
     }
 
