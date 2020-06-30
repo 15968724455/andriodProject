@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //设置监听器
         btn_tool_01.setOnClickListener(this);
+        btn_tool_02.setOnClickListener(this);
     }
 
     // 实现这个活动中的按钮的点击事件
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivityForResult(intent, 1);
                 break;
             case R.id.btn_tool_02:
+                Intent intent2 = new Intent(MainActivity.this, CalculatorActivity.class);
+                startActivityForResult(intent2, 1);
                 break;
             case R.id.btn_tool_03:
                 break;
