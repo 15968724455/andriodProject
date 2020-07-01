@@ -101,13 +101,17 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
             case R.id.btn_calculator_multiply: //*
             case R.id.btn_calculator_divide: //÷
                 ed_calculator_input.setText(str + " " + ((Button) v).getText() + " ");
+                // 按符等号键相当于重新开始计算
+                al = false;
                 break;
             case R.id.btn_calculator_clear: //清空
+                // 按完清空键相当于重新开始计算
+                al = false;
                 ed_calculator_input.setText("");
                 break;
             case R.id.btn_calculator_del: //退格键
                 // 如果不为空
-                if (str != null && !str.equals(" ")) {
+                if (str != null && !str.equals("")) {
                     // 则删除最后一个字符
                     ed_calculator_input.setText(str.substring(0, str.length() - 1));
                 }
@@ -139,6 +143,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
             // 转为双精度小数
             double arg1 = Double.parseDouble(s1);
             double arg2 = Double.parseDouble(s2);
+            System.out.println("exp" + exp + "，spaceindex" + space + ",s1：" + s1 + "，op：" + op + "，s2：" + s2);
 
             if (op.equals("＋")) {
                 r = arg1 + arg2;
@@ -156,7 +161,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                     r = arg1 / arg2;
                 }
             }
-            ed_calculator_input.setText(r + " ");
+            ed_calculator_input.setText(r + "");
         } catch (StringIndexOutOfBoundsException e1) {
             Log.i("Calculator", "无运算，纯数字");
         }
