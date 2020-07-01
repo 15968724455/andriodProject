@@ -9,8 +9,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".CalculatorActivity"
-                  android:label="@string/tool02">
+        <activity
+                android:name=".CalculatorActivity"
+                android:label="@string/tool02">
         </activity>
         <activity android:name=".MemoRecordActivity">
         </activity>

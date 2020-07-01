@@ -1,12 +1,13 @@
 package com.example.toolbox;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CalculatorActivity extends AppCompatActivity {
+public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button
             btn_calculator_1, btn_calculator_2, btn_calculator_3,
@@ -64,6 +65,11 @@ public class CalculatorActivity extends AppCompatActivity {
         btn_calculator_del.setOnClickListener(this);
         tv_calculator_result.setOnClickListener(this);
         ed_calculator_input.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }
