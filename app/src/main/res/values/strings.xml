@@ -2,6 +2,6 @@
     <string name="app_name">小白工具箱</string>
     <string name="tool01">备忘录</string>
     <string name="tool02">数值计算器</string>
-    <string name="tool03">待添加</string>
+    <string name="tool03">天气预报</string>
     <string name="tool04">待添加</string>
 </resources>
