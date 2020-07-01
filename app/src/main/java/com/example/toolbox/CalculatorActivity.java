@@ -19,8 +19,10 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
             btn_calculator_equal, btn_calculator_clear, btn_calculator_del;
     private TextView tv_calculator_result;
     private EditText ed_calculator_input;
-
+    //是否以及计算过
     private boolean al;
+    //出结果之后按的数字键次数
+    private int countnum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         ed_calculator_input.setKeyListener(null);
         // 设置是否已经计算过了（即当前页面是否显示的是结果）初始默认未计算
         al = false;
+        countnum = 0;
         // 监听
         btn_calculator_1.setOnClickListener(this);
         btn_calculator_2.setOnClickListener(this);
@@ -89,10 +92,12 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
             case R.id.btn_calculator_9:
             case R.id.btn_calculator_0:
             case R.id.btn_calculator_point:
-                // 如果已经计算过了，就舍弃掉已有的内容。因为不能把结果放在要计算的内容上
-                if (al) {
+                // 如果已经计算过了，且是直接第一次按数字键，就舍弃掉已有的内容。因为不能把结果放在要计算的内容上
+                if (al && countnum == 0) {
                     str = "";
                 }
+                // 按键次数+1；
+                countnum += 1;
                 //将文本内容忠实的输入编辑框
                 ed_calculator_input.setText(str + ((Button) v).getText());
                 break;
@@ -125,6 +130,8 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
     public void getResult() {
         // 设置为已经计算
         al = true;
+        // 按键次数清零
+        countnum = 0;
         // 结果变量
         double r = 0;
         String exp = ed_calculator_input.getText().toString();
