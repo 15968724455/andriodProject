@@ -4,4 +4,6 @@
     <color name="colorGreenDark">#008785</color>
     <color name="colorPrimaryDark">#009f9d</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="white">#ffffffff</color>
+    <color name="borderColor">#A5A5A5</color>
 </resources>
