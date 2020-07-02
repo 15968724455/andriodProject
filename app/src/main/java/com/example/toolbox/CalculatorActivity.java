@@ -171,6 +171,12 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
             ed_calculator_input.setText(r + "");
         } catch (StringIndexOutOfBoundsException e1) {
             Log.i("Calculator", "无运算，纯数字");
+        } catch (NumberFormatException e2) {
+            Log.i("Calculator", "计算出现问题");
+            ed_calculator_input.setText("出错了");
+        } catch (Exception e3){
+            Log.i("Calculator", "出现位置问题");
+            ed_calculator_input.setText("未知错误");
         }
     }
 }
