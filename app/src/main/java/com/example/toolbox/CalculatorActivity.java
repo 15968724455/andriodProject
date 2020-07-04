@@ -175,7 +175,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
             Log.i("Calculator", "计算出现问题");
             ed_calculator_input.setText("出错了");
         } catch (Exception e3){
-            Log.i("Calculator", "出现位置问题");
+            Log.i("Calculator", "出现未知问题");
             ed_calculator_input.setText("未知错误");
         }
     }
