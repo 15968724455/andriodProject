@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -81,6 +82,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss(); //关闭对话框
+                            }
+                        }).setNegativeButton("跳转到本项目开源仓库地址", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent();
+                                //Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+                                intent.setAction("android.intent.action.VIEW");
+                                Uri content_url = Uri.parse("https://github.com/Android-final-exam-2020/toolbox");
+                                intent.setData(content_url);
+                                startActivity(intent);
                             }
                         });
                 dialog = builder.create();
